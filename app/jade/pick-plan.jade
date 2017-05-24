@@ -1,0 +1,45 @@
+.pick-plan
+  .title Pick A Plan
+  .grid.lexi
+    .col.features
+      .cell.name
+      .cell Launch Unlimited Apps
+      .cell Team / User Permissions
+      .cell SAML single sign on
+      .cell 9-5 / 5 day support
+      .cell.total
+    .col
+      label
+        .cell.name
+          input(type="radio" name="plans" value="individual")
+          | Individual
+        .cell.checked 
+        .cell 
+        .cell 
+        .cell 
+        .cell.total $10/mo
+    .col.default
+      label
+        .cell.name
+          input(type="radio" name="plans" value="team" checked="checked")
+          | Team
+        .cell.checked 
+        .cell.checked  
+        .cell 
+        .cell 
+        .cell.total $15/mo
+    .col
+      label
+        .cell.name
+          input(type="radio" name="plans" value="business")
+          | Business
+        .cell.checked 
+        .cell.checked  
+        .cell.checked
+        .cell.checked
+        .cell.total $25/mo
+  if hasPaymentMethod
+    .btn.basic#activate-plan Activate your plan
+  else
+    .btn.basic#next Next
+  

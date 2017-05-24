@@ -1,0 +1,35 @@
+.home
+  if hasAccount
+    .title Welcome to your Dashboard
+    .sub Choose an option below to Get started:
+  else
+    .title Account Created!
+    .sub Choose a next step
+  .options
+    //- Download
+    .option
+      a(href="#")
+        img.shadow-icon(data-src="stack-cloud")
+        .download-arrow
+          img.shadow-icon(data-src="down-arrow")
+        .link Download
+      .blurb Run your app locally<br/>with nanobox desktop
+    //- Launch an App
+    .option.launch
+      if hasActivePlan
+        a(href="//dashboard.nanobox.io/apps/new")
+          img.shadow-icon(data-src="blue-meteor")
+          .link.square Launch An App
+        .blurb Ready to launch your first<br/>app? Let's do this!
+      else
+        a#launch-an-app()
+          img.shadow-icon(data-src="blue-meteor")
+          .link.square Launch An App
+        .blurb Choose a plan and<br/>start your free trial
+        
+    //- Get Help
+    .option
+      a(href="#")
+        img.shadow-icon(data-src="helper")
+        .link Get Help
+      .blurb Schedule a time to get<br/>help launching your app

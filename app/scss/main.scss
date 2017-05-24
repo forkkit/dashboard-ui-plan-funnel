@@ -1,2 +1,9 @@
 @import '../../lib/assets/core-styles/scss/utils';
 @import 'vars-and-utils';
+.plan-funnel{
+  @import "base";
+  @import "create-account";
+  @import "home";
+  @import "pick-plan";
+  @import "pay";
+}

@@ -1,0 +1,28 @@
+.home                {
+  .sub               {@include caps(#a1a1a1, 14px); text-align: center; }
+  .options           {display: flex; width:100%; justify-content: space-around; margin-top:40px;
+    .option          {display: flex; align-items: center; flex-direction: column; position: relative; padding-top:60px; width:33%; border-right:solid 1px #D2E3E9; padding-bottom: 70px;
+      a              {display: flex; align-items: center; flex-direction: column;
+        > svg        {min-height:150px; transition: 200ms;
+          .download  {filter: drop-shadow( -5px -5px 5px #000 );}
+        }
+        .download-arrow{position: absolute;background: white; width:34px; height:34px; display: flex; align-items: center; justify-content: center; border-radius: 50%; top:167px; @include drop-shadow(0px, 1px, 10px, rgba(black, 0.4));
+          svg{margin-top:2px; margin-left:1px; }
+        }
+        .link        {@include caps(#19aaf4, 16px); min-height:35px; display: flex; align-items: center; border-bottom: solid 2px white;
+          &.square   {background:#19aaf4; transition:200ms;  color:white; font-size:15px; padding:0 20px; border-bottom:none; }
+        }
+        &:hover      {
+          > svg        {transform:scale(1.05)}
+          .link      {border-bottom-color: #19aaf4;
+            &.square {background:#1199DE; }
+          }
+        }
+      }
+      .blurb         {font-weight:$semibold; font-size:15px; color:#5c6b78; margin-top: 15px; text-align: center}
+      &.launch       {
+        svg          {padding-top:20px; }
+      }
+    }
+  }
+}

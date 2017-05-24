@@ -1,0 +1,33 @@
+.pick-plan           {
+  .grid              {display: flex;margin:0 auto; max-width:640px; font-size:16px; font-weight: $semibold; color:#67889d; margin-top: 40px;
+    .col             {display: flex; flex-direction: column; width:20%;
+      label         {cursor:pointer;}
+      .cell          {border:solid 1px #D9D9D9; border-left:none; border-bottom:none;  min-height:44px; display: flex; align-items: center; justify-content: center;
+        &.name       {border:none; font-weight: $bold;
+          .radio-btn {margin-right:8px; }
+          .label     {font-style: normal; font-weight: bold; color:#67889d; font-size: 16px; }
+        }
+        &.total      {font-weight: $bold; font-size:20px; }
+        &.checked    {
+          &:after    {content:"√"}
+        }
+      }
+      &:after        {content:"20 day free trial"; @include caps(white, 10px); font-weight: $bold; display: flex; justify-content: center; align-items: center; padding-top:4px; opacity: 0; }
+      &:hover        {background: #FFF4E6;
+        &:after      {opacity:1; background: none; color: #19aaf4}
+      }
+      &.active       {z-index: 2; outline: solid 3px #19aaf4; cursor: initial;
+        &:hover      {background: none;}
+        &:after      {opacity:1; background: #19aaf4; color:white; }
+      }
+      &.features     {width:40%; cursor: initial;
+        .cell        {justify-content: flex-start;}
+        &:after    {display: none; }
+        &:hover      {outline:none;
+          &:hover    {background: none;}
+        }
+      }
+    }
+  }
+  .btn.basic         {margin:85px 35px 0 auto; }
+}

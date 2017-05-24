@@ -4,7 +4,9 @@
   "dependencies": {
     "jquery": "*",
     "velocity": "~1.1.0",
-    "shadow-icons": "tolmark12/shadow-icons-js"
+    "shadow-icons": "tolmark12/shadow-icons-js",
+    "lexi": "nanobox-io/lexi",
+    "payment-methods": "nanobox-io/nanobox-dash-ui-payment-methods#restructure"
   },
   "ignore": [
     "app",
