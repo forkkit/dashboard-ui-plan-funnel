@@ -8,7 +8,7 @@
   .options
     //- Download
     .option
-      a(href="#")
+      a(href="//dashboard.nanobox.io/download")
         img.shadow-icon(data-src="stack-cloud")
         .download-arrow
           img.shadow-icon(data-src="down-arrow")
@@ -16,7 +16,7 @@
       .blurb Run your app locally<br/>with nanobox desktop
     //- Launch an App
     .option.launch
-      if hasActivePlan
+      if canLaunchApps
         a(href="//dashboard.nanobox.io/apps/new")
           img.shadow-icon(data-src="blue-meteor")
           .link.square Launch An App
