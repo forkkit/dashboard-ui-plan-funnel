@@ -16,10 +16,10 @@ module.exports = class CreateAccount extends Screen
     # If a robot filled out a hidden field, kill submission
     return if $("#hal-prevention").val().length > 0
     data =
-     email    : $("#email").val()
-     password : $("#password").val()
-     company  : $("#company").val()
-     role     : $("#role").val()
+      username : $("#username").val()
+      email    : $("#email").val()
+      password : $("#password").val()
+      role     : $("#role").val()
 
     @setNames data
     @submit data, (data)=>
