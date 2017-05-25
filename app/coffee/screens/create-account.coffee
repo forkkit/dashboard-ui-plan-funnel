@@ -22,7 +22,7 @@ module.exports = class CreateAccount extends Screen
       password    : $("#password").val()
       meta        :
         role            : $("#role").val()
-        eula_accepted   : true
+        eula_accepted   : "1"
 
     # @setNames data
     @submit data, (data)=>
