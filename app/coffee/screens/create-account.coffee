@@ -19,7 +19,8 @@ module.exports = class CreateAccount extends Screen
       username : $("#username").val()
       email    : $("#email").val()
       password : $("#password").val()
-      role     : $("#role").val()
+      meta     :
+        role   : $("#role").val()
 
     # @setNames data
     @submit data, (data)=>
