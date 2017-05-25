@@ -21,7 +21,7 @@ module.exports = class CreateAccount extends Screen
       password : $("#password").val()
       role     : $("#role").val()
 
-    @setNames data
+    # @setNames data
     @submit data, (data)=>
       if data.error?
         # TODO: Handler errors
