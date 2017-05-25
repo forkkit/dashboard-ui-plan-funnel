@@ -12,6 +12,7 @@ config =
   paymentConfig : paymentMethodConfig
   hasAccount    : false
   canLaunchApps : false # canLaunchApps
+  downloadPath  : "some/path/to/download"
   createAccount : (data, cb) -> console.log(data); cb({})
   createTeam    : (name, cb) -> console.log(team); cb({})
 
