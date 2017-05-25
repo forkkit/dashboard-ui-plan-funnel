@@ -1,6 +1,6 @@
 {
   "name": "plan-funnel",
-  "version": "0.0.7",
+  "version": "0.0.9",
   "dependencies": {
     "jquery": "*",
     "velocity": "~1.1.0",
