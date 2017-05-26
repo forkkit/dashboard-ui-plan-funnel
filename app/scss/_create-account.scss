@@ -1,6 +1,6 @@
-.create-account           {max-width:580px; margin:0 auto;
+.create-account,
+.sign-in                  {max-width:580px; margin:0 auto;
   .title                  {margin-bottom:80px; }
-  $bg-color: #ebeff2;
   .row                    {display: flex; margin-bottom: 30px;
     > *                   {flex-grow: 1;}
     &.twin                {
@@ -13,17 +13,8 @@
     &.hal-prevention       {display: none; }
   }
 
-  // TODO: Consolidate this with the styles in the payment adder–move into either the shared, or into lexi... probably the shared
-  .lexi.lexi-on-white     {margin-top:30px;
-    label                 {display: flex; flex-direction: column; @include caps(#93abb9, 12px); font-style:normal; line-height: 30px; }
-    input.lexi-input      {background:$bg-color; height:50px; border:none; padding-left:15px;
-      &:focus             {background:#f9e7d0}
-    }
-    .lexi-ui              {
-      &.drop-down-trigger {text-transform: none; letter-spacing: 0; background:$bg-color; height:50px; max-height:50px; border:none; align-items: center; padding-left:15px;
-        &:after           {margin-right:20px; }
-      }
-    }
-  }
   .btn{margin: 0 auto; margin-top:65px; }
+  .switch{cursor:pointer; color:#19aaf4; font-style: italic; margin-top:40px; font-size: 14px;
+    &:hover{text-decoration: underline;}
+  }
 }

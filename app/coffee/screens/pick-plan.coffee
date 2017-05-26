@@ -8,6 +8,8 @@ module.exports = class PickPlan extends Screen
 
   build : (@config) ->
     @$node = $ pickPlan( @config )
+    if @config.isTeam
+      $('.col.individual', @$node).addClass 'hidden'
     @$el.append @$node
     lexify @$node
 
@@ -19,7 +21,7 @@ module.exports = class PickPlan extends Screen
 
     # Next, add a payment method
     $("#next", @$node).on 'click', ()=>
-      @setPlan (data)=>
+      @createTeam (data)=>
         @gotoAddPayment()
 
     # Column Clicking
@@ -27,16 +29,21 @@ module.exports = class PickPlan extends Screen
     $col.on 'click', (e)=>
       $col.removeClass 'active'
       $(e.currentTarget, @$node).addClass 'active'
+      if $(e.currentTarget).hasClass 'individual'
+        @$node.removeClass 'name-team'
+      else
+        @$node.addClass 'name-team'
 
     # Set Default:
-    # TODO: We probably want to allow a to be passed in..
+    # TODO: We probably want to allow the currently active plan to be passed in
     $defualtColumn = $ ".col.default", @$node
     $defualtColumn.trigger 'click'
     $('label', $defualtColumn).trigger 'click'
 
-  setPlan : (cb) ->
-    plan = $("input:radio[name='plans']:checked").val()
-    @config.setPlan plan, (data)=>
+
+  createTeam : (cb) ->
+    teamName = $("#team-name", @$node).val()
+    @config.createTeam teamName, (data)=>
       if data.error?
         return
       cb(data)

@@ -1,6 +1,7 @@
 base = require 'jade/base'
 # screens
 CreateAccount = require 'screens/create-account'
+SignIn        = require 'screens/sign-in'
 Home          = require 'screens/home'
 PickPlan      = require 'screens/pick-plan'
 Pay           = require 'screens/pay'
@@ -10,9 +11,11 @@ module.exports = class ScreenMachine
   constructor: (@config) ->
     @build(@config.$holder)
 
-  showHome     : ()=> @changeScreen 'home'
-  showPickPlan : ()=> @changeScreen 'pick-plan'
-  showPay      : ()=> @changeScreen 'pay'
+  showCreateAccount : ()=> @changeScreen 'create-account'
+  showSignin        : ()=> @changeScreen 'sign-in'
+  showHome          : ()=> @changeScreen 'home'
+  showPickPlan      : ()=> @changeScreen 'pick-plan'
+  showPay           : ()=> @changeScreen 'pay'
 
   refreshPage  : ()-> window.location.reload false
 
@@ -24,8 +27,12 @@ module.exports = class ScreenMachine
       @currentScreen.hide()
 
     switch screen
+      when 'sign-in'
+        if !@signIn? then @signIn = new SignIn @$el, @config.signIn, @showHome, @showCreateAccount
+        @currentScreen = @signIn
+
       when 'create-account'
-        if !@createAccount? then @createAccount = new CreateAccount @$el, @config.createAccount, @showHome
+        if !@createAccount? then @createAccount = new CreateAccount @$el, @config.createAccount, @showHome, @showSignin
         @currentScreen = @createAccount
 
       when 'home'
@@ -37,7 +44,7 @@ module.exports = class ScreenMachine
         @currentScreen = @pickPlan
 
       when 'pay'
-        if !@pay? then @pay = new Pay @$el, @config.paymentConfig
+        if !@pay? then @pay = new Pay @$el, @config
         @currentScreen = @pay
 
     @currentScreen.show()

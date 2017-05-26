@@ -8,15 +8,19 @@ paymentMethodConfig =
 
 
 config =
-  $holder       : $(".holder")
-  paymentConfig : paymentMethodConfig
-  hasAccount    : false
-  canLaunchApps : false # canLaunchApps
-  downloadPath  : "some/path/to/download"
-  createAccount : (data, cb) -> console.log(data); cb({})
-  createTeam    : (name, cb) -> console.log(team); cb({})
+  $holder          : $(".holder")
+  paymentConfig    : paymentMethodConfig
+  hasAccount       : false
+  canLaunchApps    : false # canLaunchApps
+  isTeam           : false # NEW! used to hide the individual plan
+  buyingNow        : true  # NEW! potentially used to skip the home (* * *) page
+  downloadPath     : "some/path/to/download"
+  getPaymentConfig : (cb)       -> cb paymentMethodConfig        # NEW!
+  signIn           : (data, cb) -> console.log(data); cb({})  # NEW!
+  createAccount    : (data, cb) -> console.log(data); cb({})
+  createTeam       : (name, cb) -> console.log(name); cb({})  # NEW!
 
-  setPlan       : (plan, cb) -> console.log(plan); cb({}) # Not used anymore, delete
+  #setPlan          : (plan, cb) -> console.log(plan); cb({}) # Not used anymore, delete
 
 
 app = new nanobox.PlanFunnel( config )

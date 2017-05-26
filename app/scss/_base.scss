@@ -1,2 +1,16 @@
 .title{@include caps(#19aaf4, 22px); text-align: center; padding-top:80px; }
 .btn.basic{@include caps(white, 14px); font-style: normal; height: 55px; width:210px; justify-content: center; display:flex;}
+
+// TODO: Consolidate this with the styles in the payment adder–move into either the shared, or into lexi... probably the shared
+.lexi.lexi-on-white     {margin-top:30px;
+  $bg-color: #ebeff2;
+  label                 {display: flex; flex-direction: column; @include caps(#93abb9, 12px); font-style:normal; line-height: 30px; }
+  input.lexi-input      {background:$bg-color; height:50px; border:none; padding-left:15px;
+    &:focus             {background:#f9e7d0}
+  }
+  .lexi-ui              {
+    &.drop-down-trigger {text-transform: none; letter-spacing: 0; background:$bg-color; height:50px; max-height:50px; border:none; align-items: center; padding-left:15px;
+      &:after           {margin-right:20px; }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+√ Login
+- Errors
+√ Name Team
+√ Callback to retrieve the braintree token
+√ If they are a team, don't show 'individual' plan
+√ Remove non-applicable rows from the plan page
+- Design login / register surrounding page
+- Back buttons

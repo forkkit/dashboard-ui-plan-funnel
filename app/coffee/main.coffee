@@ -11,12 +11,11 @@ class PlanFunnel
       @screenMachine.changeScreen 'home'
     # No account, let's create one:
     else
-      @screenMachine.changeScreen 'create-account'
+      @screenMachine.changeScreen 'sign-in'
 
   # Draw any assumptions about the data we need
   inspectData : () ->
-    @config.hasPaymentMethod = @config.paymentConfig.paymentMethod.length >= 1
-    console.log @config
+    # @config.hasPaymentMethod = @config.paymentConfig.paymentMethod.length >= 1
 
 window.nanobox ||= {}
 nanobox.PlanFunnel = PlanFunnel

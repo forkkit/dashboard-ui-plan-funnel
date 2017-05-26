@@ -3,13 +3,18 @@ pay = require 'jade/pay'
 
 module.exports = class Pay extends Screen
 
-  constructor: (@$el, paymentConfig) ->
-    @build paymentConfig
+  constructor: (@$el, @config) ->
+    @build()
 
-
-  build : (paymentConfig) ->
+  build : () ->
     @$node = $ pay( {} )
     @$el.append @$node
     castShadows @$node
-    @payMethods = new nanobox.PaymentMethods $(".payment-wrapper", @$node), paymentConfig, false
-    @payMethods.createPayMethod {}, $(".payment-wrapper", @$node), true
+    @config.getPaymentConfig (paymentConfig)=>
+      if paymentConfig.error
+        console.log "Errors getting payment config:"
+        console.log paymentConfig.error
+        return
+
+      @payMethods = new nanobox.PaymentMethods $(".payment-wrapper", @$node), paymentConfig, false
+      @payMethods.createPayMethod {}, $(".payment-wrapper", @$node), true

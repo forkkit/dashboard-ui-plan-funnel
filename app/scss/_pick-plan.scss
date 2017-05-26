@@ -1,7 +1,8 @@
 .pick-plan           {
   .grid              {display: flex;margin:0 auto; max-width:640px; font-size:16px; font-weight: $semibold; color:#67889d; margin-top: 40px;
-    .col             {display: flex; flex-direction: column; width:30%;
-      label         {cursor:pointer;}
+    .plans           {display: flex; width: 60%; }
+    .col             {display: flex; flex-direction: column; flex-grow: 1;
+      label          {cursor:pointer;}
       .cell          {border:solid 1px #D9D9D9; border-left:none; border-bottom:none;  min-height:44px; display: flex; align-items: center; justify-content: center;
         &.name       {border:none; font-weight: $bold;
           .radio-btn {margin-right:8px; }
@@ -22,12 +23,19 @@
       }
       &.features     {width:40%; cursor: initial;
         .cell        {justify-content: flex-start;}
-        &:after    {display: none; }
+        &:after      {display: none; }
         &:hover      {outline:none;
           &:hover    {background: none;}
         }
       }
     }
   }
-  .btn.basic         {margin:85px 35px 0 auto; }
+  .submit-section    {margin-top:140px; display: flex; justify-content: space-between; padding: 0 40px; align-items: flex-end;
+    .team-name       {flex-grow: 1; padding-right:30px; }
+    .btn.basic       {margin-left: auto;}
+  }
+  .team-name         {opacity: 0}
+  &.name-team        {
+    .team-name       {opacity: 1;}
+  }
 }
