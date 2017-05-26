@@ -14,6 +14,7 @@ config =
   canLaunchApps    : false # canLaunchApps
   isTeam           : false # NEW! used to hide the individual plan
   buyingNow        : true  # NEW! potentially used to skip the home (* * *) page
+  showSignin       : true  # NEW!
   downloadPath     : "some/path/to/download"
   getPaymentConfig : (cb)       -> cb paymentMethodConfig        # NEW!
   signIn           : (data, cb) -> console.log(data); cb({})  # NEW!

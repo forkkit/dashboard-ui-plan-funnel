@@ -9,10 +9,12 @@ class PlanFunnel
     # They have an account, show their home!
     if @config.hasAccount
       @screenMachine.changeScreen 'home'
-    # No account, let's create one:
+    # No account, let's create one or login:
     else
-      @screenMachine.changeScreen 'sign-in'
-
+      if @config.showSignin
+        @screenMachine.changeScreen 'sign-in'
+      else
+        @screenMachine.changeScreen 'create-account'
   # Draw any assumptions about the data we need
   inspectData : () ->
     # @config.hasPaymentMethod = @config.paymentConfig.paymentMethod.length >= 1
