@@ -16,11 +16,10 @@ config =
   buyingNow        : true  # NEW! potentially used to skip the home (* * *) page
   showSignin       : true  # NEW!
   downloadPath     : "/path/to/download/desktop"
-  dashboardPath    : "/path/to/nanobox/dashboard"
-  getPaymentConfig : (cb)       -> cb paymentMethodConfig        # NEW!
-  signIn           : (data, cb) -> console.log(data); cb({})  # NEW!
+  getPaymentConfig : (cb)       -> cb paymentMethodConfig                             # NEW!
+  signIn           : (data, cb) -> console.log(data); cb({redirect:'redirect/path'})  # NEW!
   createAccount    : (data, cb) -> console.log(data); cb({})
-  createTeam       : (name, cb) -> console.log(name); cb({})  # NEW!
+  createTeam       : (name, cb) -> console.log(name); cb({})                          # NEW!
 
   #setPlan          : (plan, cb) -> console.log(plan); cb({}) # Not used anymore, delete
 

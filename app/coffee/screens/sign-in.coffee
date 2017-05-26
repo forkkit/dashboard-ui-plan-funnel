@@ -21,10 +21,10 @@ module.exports = class Signin extends Screen
       password    : $("#password", @$node).val()
 
     # @setNames data
-    @config.signIn data, (data)=>
-      if data.error?
+    @config.signIn data, (result)=>
+      if result.error?
         # TODO: Handle errors
-        console.log data.error
+        console.log result.error
       else
-        window.location = @config.dashboardPath
+        window.location = result.redirect
         @submitSuccessCb()

@@ -15,6 +15,7 @@ class PlanFunnel
         @screenMachine.changeScreen 'sign-in'
       else
         @screenMachine.changeScreen 'create-account'
+        
   # Draw any assumptions about the data we need
   inspectData : () ->
     # @config.hasPaymentMethod = @config.paymentConfig.paymentMethod.length >= 1
