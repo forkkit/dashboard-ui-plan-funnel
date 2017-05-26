@@ -28,7 +28,7 @@ module.exports = class ScreenMachine
 
     switch screen
       when 'sign-in'
-        if !@signIn? then @signIn = new SignIn @$el, @config.signIn, @showHome, @showCreateAccount
+        if !@signIn? then @signIn = new SignIn @$el, @config, @showHome, @showCreateAccount
         @currentScreen = @signIn
 
       when 'create-account'

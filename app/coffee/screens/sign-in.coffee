@@ -3,7 +3,7 @@ signIn = require 'jade/sign-in'
 
 module.exports = class Signin extends Screen
 
-  constructor: ($el, @submit, @submitSuccessCb, @createAccountCb) ->
+  constructor: ($el, @config, @submitSuccessCb, @createAccountCb) ->
     @build $el
 
   build : ($el) ->
@@ -21,10 +21,10 @@ module.exports = class Signin extends Screen
       password    : $("#password", @$node).val()
 
     # @setNames data
-    @submit data, (data)=>
+    @config.signIn data, (data)=>
       if data.error?
         # TODO: Handle errors
         console.log data.error
       else
-        console.log "Asdf"
+        window.location = @config.dashboardPath
         @submitSuccessCb()
