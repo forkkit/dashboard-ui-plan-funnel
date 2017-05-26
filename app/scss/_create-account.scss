@@ -1,5 +1,6 @@
 .create-account,
-.sign-in                  {max-width:580px; margin:0 auto;
+.sign-in                  {max-width:580px; margin:0 auto;position: relative;
+  #errors                 {position: absolute; top:120px; }
   .title                  {margin-bottom:80px; }
   .row                    {display: flex; margin-bottom: 30px;
     > *                   {flex-grow: 1;}

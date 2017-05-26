@@ -1,17 +1,22 @@
-Screen = require 'screens/screen'
+Form = require 'screens/form'
 signIn = require 'jade/sign-in'
 
-module.exports = class Signin extends Screen
+module.exports = class Signin extends Form
 
   constructor: ($el, @config, @submitSuccessCb, @createAccountCb) ->
     @build $el
+    super()
 
   build : ($el) ->
     @$node = $ signIn( {} )
     $el.append @$node
     lexify @$node
+
+    @$login = $("#login", @$node)
     $("#switch", @$node).on 'click', @createAccountCb
-    $("#login", @$node).on  'click', @submitForm
+    @$login.on               'click', ()=>
+      @$login.addClass 'ing'
+      @submitForm()
 
   submitForm : () =>
     # If a robot filled out a hidden field, kill submission
@@ -22,9 +27,10 @@ module.exports = class Signin extends Screen
 
     # @setNames data
     @config.signIn data, (result)=>
+      @$login.removeClass 'ing'
+      @clearErrors()
       if result.error?
-        # TODO: Handle errors
-        console.log result.error
+        @showErrors result.error
       else
         window.location = result.redirect
         @submitSuccessCb()

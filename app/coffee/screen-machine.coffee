@@ -40,14 +40,17 @@ module.exports = class ScreenMachine
         @currentScreen = @home
 
       when 'pick-plan'
-        if !@pickPlan? then @pickPlan = new PickPlan @$el, @config, @refreshPage, @showPay
+        if !@pickPlan? then @pickPlan = new PickPlan @$el, @config, @refreshPage, @showHome, @showPay
         @currentScreen = @pickPlan
 
       when 'pay'
-        if !@pay? then @pay = new Pay @$el, @config
+        if !@pay? then @pay = new Pay @$el, @config, @showPickPlan, @getSelectedPlan
         @currentScreen = @pay
 
     @currentScreen.show()
+
+  getSelectedPlan : () => @pickPlan.getSelectedPlan()
+
 
   build : ($parent) ->
     @$el = $ base( {} )

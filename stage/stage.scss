@@ -1,3 +1,3 @@
 @import '../lib/assets/core-styles/styles.scss';
 html, body{background: #49BDF5; height: 100vh; }
-.holder{width:715px; height:600px; background: white; margin: 0 auto; position: relative; top: 50%; transform: translateY(-50%);}
+.holder{width:715px; min-height:600px; background: white; margin: 0 auto; position: relative; top: 50%; transform: translateY(-50%);}

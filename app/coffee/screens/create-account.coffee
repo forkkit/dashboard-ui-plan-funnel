@@ -1,10 +1,11 @@
 createAccount = require 'jade/create-account'
-Screen = require 'screens/screen'
+Form = require 'screens/form'
 
-module.exports = class CreateAccount extends Screen
+module.exports = class CreateAccount extends Form
 
   constructor: (@$el, @submit, @submitSuccessCb, @switchToSignin) ->
     @build()
+    super()
 
   build : () ->
     @$node = $ createAccount( {} )
@@ -26,10 +27,10 @@ module.exports = class CreateAccount extends Screen
         eula_accepted   : "1"
 
     # @setNames data
-    @submit data, (data)=>
-      if data.error?
-        # TODO: Handler errors
-        console.log data.error
+    @submit data, (result)=>
+      @clearErrors()
+      if result.error?
+        @showErrors result.error
       else
         @submitSuccessCb()
 

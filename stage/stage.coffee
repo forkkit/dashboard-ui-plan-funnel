@@ -10,15 +10,15 @@ paymentMethodConfig =
 config =
   $holder          : $(".holder")
   paymentConfig    : paymentMethodConfig
-  hasAccount       : false
+  hasAccount       : true
   canLaunchApps    : false # canLaunchApps
   isTeam           : false # NEW! used to hide the individual plan
   buyingNow        : true  # NEW! potentially used to skip the home (* * *) page
-  showSignin       : true  # NEW!
+  showSignin       : false  # NEW!
   downloadPath     : "/path/to/download/desktop"
   getPaymentConfig : (cb)       -> cb paymentMethodConfig                             # NEW!
-  signIn           : (data, cb) -> console.log(data); cb({redirect:'redirect/path'})  # NEW!
-  createAccount    : (data, cb) -> console.log(data); cb({})
+  signIn           : (data, cb) -> console.log(data); cb({redirect:'/index.html'})  # NEW!
+  createAccount    : (data, cb) -> console.log(data); cb({error:"some error"})
   createTeam       : (name, cb) -> console.log(name); cb({})                          # NEW!
 
   #setPlan          : (plan, cb) -> console.log(plan); cb({}) # Not used anymore, delete

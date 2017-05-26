@@ -3,14 +3,18 @@ pickPlan = require 'jade/pick-plan'
 
 module.exports = class PickPlan extends Screen
 
-  constructor: (@$el, @config, @refreshPage, @gotoAddPayment) ->
+  constructor: (@$el, @config, @refreshPage, @gotoHome, @gotoAddPayment) ->
     @build @config
+    @plans =
+      individual : {name:"Individual", cost:10}
+      team       : {name:"Team", cost:20}
 
   build : (@config) ->
     @$node = $ pickPlan( @config )
     if @config.isTeam
       $('.col.individual', @$node).addClass 'hidden'
     @$el.append @$node
+    castShadows @$node
     lexify @$node
 
     # Activate plan
@@ -24,9 +28,12 @@ module.exports = class PickPlan extends Screen
       @createTeam (data)=>
         @gotoAddPayment()
 
+    $(".back-btn", @$node).on 'click', @gotoHome
+
     # Column Clicking
     $col = $('.col', @$node)
     $col.on 'click', (e)=>
+      @selectedPlan = e.currentTarget.dataset.id
       $col.removeClass 'active'
       $(e.currentTarget, @$node).addClass 'active'
       if $(e.currentTarget).hasClass 'individual'
@@ -40,6 +47,8 @@ module.exports = class PickPlan extends Screen
     $defualtColumn.trigger 'click'
     $('label', $defualtColumn).trigger 'click'
 
+
+  getSelectedPlan : () -> @plans[@selectedPlan]
 
   createTeam : (cb) ->
     teamName = $("#team-name", @$node).val()

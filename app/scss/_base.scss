@@ -1,5 +1,9 @@
 .title{@include caps(#19aaf4, 22px); text-align: center; padding-top:80px; }
 .btn.basic{@include caps(white, 14px); font-style: normal; height: 55px; width:210px; justify-content: center; display:flex;}
+.back-btn{display: flex; position: absolute; top:30px; left:30px; cursor: pointer; align-items: center;
+  .txt{margin-left:5px; }
+  &:hover{}
+}
 
 // TODO: Consolidate this with the styles in the payment adder–move into either the shared, or into lexi... probably the shared
 .lexi.lexi-on-white     {margin-top:30px;

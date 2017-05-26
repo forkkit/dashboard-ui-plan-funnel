@@ -1,4 +1,7 @@
 .pick-plan.lexi.lexi-on-white
+  .back-btn
+    img.shadow-icon(data-src="back-x-btn")
+    .txt Back
   .title Pick A Plan
   .grid
     .col.features
@@ -7,7 +10,7 @@
       .cell Team / User Permissions
       .cell.total
     .plans
-      .col.individual
+      .col.individual(data-id="individual")
         label
           .cell.name
             input(type="radio" name="plans" value="individual")
@@ -15,7 +18,7 @@
           .cell.checked 
           .cell 
           .cell.total $10/mo
-      .col.default
+      .col.default(data-id="team")
         label
           .cell.name
             input(type="radio" name="plans" value="team" checked="checked")
