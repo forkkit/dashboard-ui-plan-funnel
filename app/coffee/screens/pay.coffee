@@ -27,9 +27,9 @@ module.exports = class Pay extends Screen
       @payMethods = new nanobox.PaymentMethods $(".payment-wrapper", @$node), paymentConfig, false
       @payMethods.createPayMethod {}, $(".payment-wrapper", @$node), true
 
-    onPaymentReady : (data, nonce, cb) =>
-      @realPaymentCreateCb data, nonce, ()=>
-        if data.error?
-          cb(data)
-        else
-          window.location = @config.launchAppPath
+  onPaymentReady : (data, nonce, cb) =>
+    @realPaymentCreateCb data, nonce, ()=>
+      if data.error?
+        cb(data)
+      else
+        window.location = @config.launchAppPath
