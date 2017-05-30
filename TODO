@@ -9,5 +9,6 @@
 - On forms, let 'enter' keypress submit
 - Forgot Password
 ------------------------------------ Issues
-- On individual team, clicking next tries to create a team
-- Get Help : https://nanobox.io/contact-us/
+√ On individual team, clicking next tries to create a team
+√ Get Help : https://nanobox.io/contact-us/
+√ change the payment method component to default to create (instead of update)

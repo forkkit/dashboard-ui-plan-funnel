@@ -1,21 +1,23 @@
 .sign-in
   .title Sign In
   .lexi.lexi-on-white
-    #errors.hidden
-      .error
-    .row
-      label 
-        | Username
-        input#username
-    .row
-      label
-        | Password
-        input(type="password")#password
-    //- frustrate robots
-    .row.hal-prevention
-      label
-        | Important
-        input#hal-prevention
-          
-    .btn.basic.lifecycle#login Login
+    form(onsubmit="/do/nothing")
+      #errors.hidden
+        .error
+      .row
+        label 
+          | Username
+          input#username
+      .row
+        label
+          | Password
+          input(type="password")#password
+      //- frustrate robots
+      .row.hal-prevention
+        label
+          | Important
+          input#hal-prevention
+            
+      .btn.basic.lifecycle#login Login
+      input(type="submit" value="Login" style="display:none")
   .switch#switch Create an account

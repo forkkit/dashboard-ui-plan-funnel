@@ -1,31 +1,33 @@
 .create-account
   .title Create Account
-  .lexi.lexi-on-white
-    #errors.hidden
-      .error
-    .row.twin
-      label 
-        | Username
-        input#username
-      label
-        | Password
-        input(type="password")#password
-    .row.twin
-      label
-        | Email
-        input#email
-      label
-        | role
-        select#role
-          option(value="developer") Developer
-          option(value="owner") Owner
-          option(value="project-manager") Project Manager
-          option(value="other") Other
-    //- frustrate robots
-    .row.hal-prevention
-      label
-        | Important
-        input#hal-prevention
-          
-    .btn.basic#create-account Create Account
-  .switch#switch I already have an account
+  form(onsubmit="/do/nothing")
+    .lexi.lexi-on-white
+      #errors.hidden
+        .error
+      .row.twin
+        label 
+          | Username
+          input#username
+        label
+          | Password
+          input(type="password")#password
+      .row.twin
+        label
+          | Email
+          input#email
+        label
+          | role
+          select#role
+            option(value="developer") Developer
+            option(value="owner") Owner
+            option(value="project-manager") Project Manager
+            option(value="other") Other
+      //- frustrate robots
+      .row.hal-prevention
+        label
+          | Important
+          input#hal-prevention
+            
+      .btn.basic.lifecycle#create-account Create Account
+      input.btn.basic.lifecycle#create-account(type="submit" value="Create Account" style="display:none")
+    .switch#switch I already have an account

@@ -11,10 +11,13 @@ module.exports = class CreateAccount extends Form
     @$node = $ createAccount( {} )
     @$el.append @$node
     lexify @$node
-    $("#create-account").on 'click', @submitForm
+    @$createBtn = $("#create-account", @$node)
     $("#switch", @$node).on 'click', @switchToSignin
+    $("form", @$node).on 'submit', (e)=> e.preventDefault(); @submitForm()
+    @$createBtn.on 'click', ()=> @submitForm()
 
   submitForm : () =>
+    @$createBtn.addClass 'ing'
     # If a robot filled out a hidden field, kill submission
     return if $("#hal-prevention", @$node).val().length > 0
     data =
@@ -28,6 +31,7 @@ module.exports = class CreateAccount extends Form
 
     # @setNames data
     @submit data, (result)=>
+      @$createBtn.removeClass 'ing'
       @clearErrors()
       if result.error?
         @showErrors result.error

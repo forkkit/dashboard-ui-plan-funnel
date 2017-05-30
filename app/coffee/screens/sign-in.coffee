@@ -14,11 +14,11 @@ module.exports = class Signin extends Form
 
     @$login = $("#login", @$node)
     $("#switch", @$node).on 'click', @createAccountCb
-    @$login.on               'click', ()=>
-      @$login.addClass 'ing'
-      @submitForm()
+    $("form", @$node).on 'submit', (e)=>e.preventDefault(); @submitForm()
+    @$login.on 'click',            ()=> @submitForm()
 
   submitForm : () =>
+    @$login.addClass 'ing'
     # If a robot filled out a hidden field, kill submission
     return if $("#hal-prevention", @$node).val().length > 0
     data =
