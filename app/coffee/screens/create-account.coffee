@@ -3,7 +3,7 @@ Form = require 'screens/form'
 
 module.exports = class CreateAccount extends Form
 
-  constructor: (@$el, @submit, @submitSuccessCb, @switchToSignin) ->
+  constructor: (@$el, @config, @submitSuccessCb, @switchToSignin) ->
     @build()
     super()
 
@@ -30,13 +30,16 @@ module.exports = class CreateAccount extends Form
         eula_accepted   : "1"
 
     # @setNames data
-    @submit data, (result)=>
+    @config.createAccount data, (result)=>
       @$createBtn.removeClass 'ing'
       @clearErrors()
       if result.error?
         @showErrors result.error
       else
-        @submitSuccessCb()
+        if @config.doRedirect
+          window.location = result.redirect
+        else
+          @submitSuccessCb()
 
   # Find the first name
   setNames : (data) ->

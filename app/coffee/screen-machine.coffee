@@ -32,7 +32,7 @@ module.exports = class ScreenMachine
         @currentScreen = @signIn
 
       when 'create-account'
-        if !@createAccount? then @createAccount = new CreateAccount @$el, @config.createAccount, @showHome, @showSignin
+        if !@createAccount? then @createAccount = new CreateAccount @$el, @config, @showHome, @showSignin
         @currentScreen = @createAccount
 
       when 'home'
