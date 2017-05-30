@@ -6,8 +6,8 @@ module.exports = class PickPlan extends Screen
   constructor: (@$el, @config, @refreshPage, @gotoHome, @gotoAddPayment) ->
     @build @config
     @plans =
-      individual : {name:"Individual", cost:10}
-      team       : {name:"Team", cost:20}
+      individual : {name:"Individual", cost:10, is_a_team:false}
+      team       : {name:"Team", cost:20, is_a_team:true}
 
   build : (@config) ->
     @$node = $ pickPlan( @config )
@@ -51,8 +51,12 @@ module.exports = class PickPlan extends Screen
   getSelectedPlan : () -> @plans[@selectedPlan]
 
   createTeam : (cb) ->
-    teamName = $("#team-name", @$node).val()
-    @config.createTeam teamName, (data)=>
-      if data.error?
-        return
-      cb(data)
+    # We may want to actually create the team next step...
+    if @getSelectedPlan().is_a_team
+      teamName = $("#team-name", @$node).val()
+      @config.createTeam teamName, (data)=>
+        if data.error?
+          return
+        cb(data)
+    else
+      cb()
