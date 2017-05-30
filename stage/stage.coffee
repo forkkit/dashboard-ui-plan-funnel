@@ -10,8 +10,8 @@ paymentMethodConfig =
 config =
   $holder          : $(".holder")
   paymentConfig    : paymentMethodConfig
-  hasAccount       : false
-  canLaunchApps    : true # canLaunchApps
+  hasAccount       : true
+  canLaunchApps    : false # canLaunchApps
   isTeam           : false # NEW! used to hide the individual plan
   buyingNow        : true  # NEW! potentially used to skip the home (* * *) page
   showSignin       : true  # NEW!

@@ -22,6 +22,8 @@ module.exports = class Pay extends Screen
 
       @realPaymentCreateCb = paymentConfig.createPaymentMethod
       paymentConfig.createPaymentMethod = @onPaymentReady
+      console.log "paymentMethod callback:"
+      console.log paymentConfig.createPaymentMethod
       @payMethods = new nanobox.PaymentMethods $(".payment-wrapper", @$node), paymentConfig, false
       @payMethods.createPayMethod {}, $(".payment-wrapper", @$node), true
 
