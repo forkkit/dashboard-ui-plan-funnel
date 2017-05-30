@@ -11,11 +11,12 @@ config =
   $holder          : $(".holder")
   paymentConfig    : paymentMethodConfig
   hasAccount       : false
-  canLaunchApps    : false # canLaunchApps
+  canLaunchApps    : true # canLaunchApps
   isTeam           : false # NEW! used to hide the individual plan
   buyingNow        : true  # NEW! potentially used to skip the home (* * *) page
   showSignin       : false  # NEW!
   downloadPath     : "/path/to/download/desktop"
+  launchAppPath    : 'path/to/launching/new/app'
   getPaymentConfig : (cb)       -> cb paymentMethodConfig                             # NEW!
   signIn           : (data, cb) -> console.log(data); cb({redirect:'/index.html'})  # NEW!
   createAccount    : (data, cb) -> console.log(data); cb({})
