@@ -52,7 +52,9 @@ module.exports = class PickPlan extends Screen
 
   createTeam : (cb) ->
     # We may want to actually create the team next step...
-    if @getSelectedPlan().is_a_team
+
+    # If they selected a team plan, and they haven't already created the plan
+    if @getSelectedPlan().is_a_team && !@config.isTeam
       teamName = $("#team-name", @$node).val()
       @config.createTeam teamName, (data)=>
         if data.error?
