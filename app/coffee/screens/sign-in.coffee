@@ -33,6 +33,8 @@ module.exports = class Signin extends Form
         @showErrors result.error
       else
         if @config.signInOnly
+          console.log 'if'
           window.location = result.redirect
         else
+          console.log 'else'
           @submitSuccessCb()

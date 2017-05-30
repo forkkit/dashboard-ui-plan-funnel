@@ -14,8 +14,8 @@ config =
   canLaunchApps    : true # canLaunchApps
   isTeam           : false # NEW! used to hide the individual plan
   buyingNow        : true  # NEW! potentially used to skip the home (* * *) page
-  showSignin       : false  # NEW!
-  signInOnly       : true
+  showSignin       : true  # NEW!
+  signInOnly       : false
   downloadPath     : "/path/to/download/desktop"
   launchAppPath    : 'path/to/launching/new/app'
   getPaymentConfig : (cb)       -> cb paymentMethodConfig                             # NEW!
