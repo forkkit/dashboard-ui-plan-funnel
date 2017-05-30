@@ -15,10 +15,11 @@ config =
   isTeam           : false # NEW! used to hide the individual plan
   buyingNow        : true  # NEW! potentially used to skip the home (* * *) page
   showSignin       : false  # NEW!
+  signInOnly       : true
   downloadPath     : "/path/to/download/desktop"
   launchAppPath    : 'path/to/launching/new/app'
   getPaymentConfig : (cb)       -> cb paymentMethodConfig                             # NEW!
-  signIn           : (data, cb) -> console.log(data); cb({redirect:'/index.html'})  # NEW!
+  signIn           : (data, cb) -> console.log(data); cb({redirect:'/index.html'})    # NEW!
   createAccount    : (data, cb) -> console.log(data); cb({})
   createTeam       : (name, cb) -> console.log(name); cb({})                          # NEW!
 

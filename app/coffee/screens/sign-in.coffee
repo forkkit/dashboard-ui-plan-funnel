@@ -32,5 +32,7 @@ module.exports = class Signin extends Form
       if result.error?
         @showErrors result.error
       else
-        window.location = result.redirect
-        @submitSuccessCb()
+        if @config.signInOnly
+          window.location = result.redirect
+        else
+          @submitSuccessCb()
