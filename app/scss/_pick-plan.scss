@@ -30,7 +30,8 @@
       }
     }
   }
-  .submit-section    {margin-top:140px; display: flex; justify-content: space-between; padding: 0 40px; align-items: flex-end;
+  .submit-section    {margin-top:140px; display: flex; justify-content: space-between; padding: 0 40px; align-items: flex-end; position: relative;
+    #errors          {position: absolute; max-width:630px; top:-80px; }
     .team-name       {flex-grow: 1; padding-right:30px; }
     .btn.basic       {margin-left: auto;}
   }

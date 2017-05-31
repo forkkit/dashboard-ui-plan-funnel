@@ -5,15 +5,16 @@
 √ If they are a team, don't show 'individual' plan
 √ Remove non-applicable rows from the plan page
 √ Back buttons
+√ Added EULA checkbox
+√ Added forgot password link
 - Build front site
 - Integrate into the front site
 - Design login / register surrounding page
 - On forms, let 'enter' keypress submit
   √ Login
   √ Create account
-  - Create Team
+  √ Create Team
   - Payment methods?
-- Forgot Password
 ------------------------------------ Issues
 √ On individual team, clicking next tries to create a team
 √ Get Help : https://nanobox.io/contact-us/

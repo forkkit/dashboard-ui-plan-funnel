@@ -1,14 +1,16 @@
 Screen = require 'screens/screen'
 pickPlan = require 'jade/pick-plan'
+Form = require 'screens/form'
 
-module.exports = class PickPlan extends Screen
+module.exports = class PickPlan extends Form
 
   constructor: (@$el, @config, @refreshPage, @gotoHome, @gotoAddPayment) ->
     @build @config
     @plans =
       individual : {name:"Individual", cost:10, is_a_team:false}
       team       : {name:"Team", cost:20, is_a_team:true}
-
+    super()
+    
   build : (@config) ->
     @$node = $ pickPlan( @config )
     if @config.isTeam
@@ -46,13 +48,15 @@ module.exports = class PickPlan extends Screen
   proceed : (cb) ->
     # We may want to actually create the team next step...
 
+    @clearErrors()
     # If they selected a team plan && they haven't already created the team
     if @getSelectedPlan().is_a_team && !@config.isTeam
       teamName = $("#team-name", @$node).val()
-      @config.createTeam teamName, (data)=>
-        if data.error?
-          return
-        cb(data)
+      @config.createTeam teamName, (result)=>
+        if result.error?
+          @showErrors result.error
+        else
+          cb(result)
     else
       cb()
 

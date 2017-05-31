@@ -37,6 +37,8 @@
       //-     .cell.checked
       //-     .cell.total $25/mo
   .submit-section
+    #errors.hidden
+      .error
     form(onsubmit="/do/nothing")
       input(type="submit" value="Create Account" style="display:none")
       if !isTeam
