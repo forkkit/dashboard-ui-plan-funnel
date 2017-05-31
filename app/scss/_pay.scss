@@ -2,6 +2,7 @@
 
   .total                  {position: absolute; bottom:40px; left:80px; color:#8398a6; font-size:24px; font-weight: $semibold;
     &:before              {content:"free for 20 days"; @include caps(white, 10px); background: #1DABEE; position: absolute; top:-30px; padding: 5px 10px; }
+    &.team:after          {content:"per user"; font-size:16px;}       
   }
 
   // Styling / Overriding the payment method

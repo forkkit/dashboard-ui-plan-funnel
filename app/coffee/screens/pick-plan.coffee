@@ -8,9 +8,9 @@ module.exports = class PickPlan extends Form
     @build @config
     @plans =
       individual : {name:"Individual", cost:10, is_a_team:false}
-      team       : {name:"Team", cost:20, is_a_team:true}
+      team       : {name:"Team", cost:15, is_a_team:true}
     super()
-    
+
   build : (@config) ->
     @$node = $ pickPlan( @config )
     if @config.isTeam

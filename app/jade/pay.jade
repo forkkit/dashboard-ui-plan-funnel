@@ -4,4 +4,4 @@
     .txt Back
   .title Finalize / Start your Free Trial
   .payment-wrapper
-  .total #{plan.name} plan : $#{plan.cost}/mo
+  .total(class= plan.is_a_team ? "team" : "") #{plan.name} plan : $#{plan.cost}/mo 

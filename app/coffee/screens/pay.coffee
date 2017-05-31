@@ -7,7 +7,6 @@ module.exports = class Pay extends Screen
     @build()
 
   build : () ->
-    console.log {plan:@getSelectedPlan()}
     @$node = $ pay( {plan:@getSelectedPlan()} )
     @$el.append @$node
     castShadows @$node
