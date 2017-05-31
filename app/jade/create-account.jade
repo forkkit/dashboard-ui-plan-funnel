@@ -22,12 +22,14 @@
             option(value="owner") Owner
             option(value="project-manager") Project Manager
             option(value="other") Other
+      .row.eula
+        input#eula(type="checkbox")
+        .txt I have read and agree to the <a href="http://nanobox.io/legal">EULA</a>
       //- frustrate robots
       .row.hal-prevention
         label
           | Important
           input#hal-prevention
-            
       .btn.basic.lifecycle#create-account Create Account
-      input.btn.basic.lifecycle#create-account(type="submit" value="Create Account" style="display:none")
+      input(type="submit" value="" style="display:none")
     .switch#switch I already have an account

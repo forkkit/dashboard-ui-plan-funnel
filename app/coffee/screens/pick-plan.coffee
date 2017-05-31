@@ -17,16 +17,9 @@ module.exports = class PickPlan extends Screen
     castShadows @$node
     lexify @$node
 
-    # Activate plan
-    $("#activate-plan", @$node).on 'click', ()=>
-      @setPlan (data)=>
-        @config.hasPaymentMethod = true
-        @refreshPage()
-
-    # Next, add a payment method
-    $("#next", @$node).on 'click', ()=>
-      @createTeam (data)=>
-        @gotoAddPayment()
+    # Next / Activate plan
+    $("#next", @$node).on 'click', ()=> @next()
+    $("form", @$node).on 'submit', (e)=> e.preventDefault(); @next()
 
     $(".back-btn", @$node).on 'click', @gotoHome
 
@@ -50,10 +43,10 @@ module.exports = class PickPlan extends Screen
 
   getSelectedPlan : () -> @plans[@selectedPlan]
 
-  createTeam : (cb) ->
+  proceed : (cb) ->
     # We may want to actually create the team next step...
 
-    # If they selected a team plan, and they haven't already created the plan
+    # If they selected a team plan && they haven't already created the team
     if @getSelectedPlan().is_a_team && !@config.isTeam
       teamName = $("#team-name", @$node).val()
       @config.createTeam teamName, (data)=>
@@ -62,3 +55,13 @@ module.exports = class PickPlan extends Screen
         cb(data)
     else
       cb()
+
+  next : () ->
+    # If they already have a payment method
+    if @config.hasPaymentMethod
+      @setPlan (data)=>
+        @config.hasPaymentMethod = true
+        @refreshPage()
+    # else, they don't have a plan, proceed to add a payment method
+    else
+      @proceed (data)=> @gotoAddPayment()

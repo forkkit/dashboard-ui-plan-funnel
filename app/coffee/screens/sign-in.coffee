@@ -8,7 +8,7 @@ module.exports = class Signin extends Form
     super()
 
   build : ($el) ->
-    @$node = $ signIn( {} )
+    @$node = $ signIn( @config )
     $el.append @$node
     lexify @$node
 

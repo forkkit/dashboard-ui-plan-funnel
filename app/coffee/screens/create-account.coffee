@@ -27,7 +27,7 @@ module.exports = class CreateAccount extends Form
       password    : $("#password", @$node).val()
       meta        :
         role            : $("#role", @$node).val()
-        eula_accepted   : "1"
+        eula_accepted   : if $("#eula").is(':checked') then "1" else "0"
 
     # @setNames data
     @config.createAccount data, (result)=>

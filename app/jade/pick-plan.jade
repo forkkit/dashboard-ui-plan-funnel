@@ -37,12 +37,14 @@
       //-     .cell.checked
       //-     .cell.total $25/mo
   .submit-section
-    if !isTeam
-      label.team-name
-        | Name your Team
-        input()#team-name
-    if hasPaymentMethod
-      .btn.basic#activate-plan Activate your plan
-    else
-      .btn.basic#next Next
-  
+    form(onsubmit="/do/nothing")
+      input(type="submit" value="Create Account" style="display:none")
+      if !isTeam
+        label.team-name
+          | Name your Team
+          input()#team-name
+      if hasPaymentMethod
+        .btn.basic#next Activate your plan
+      else
+        .btn.basic#next Next
+    
