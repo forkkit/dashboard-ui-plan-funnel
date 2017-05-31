@@ -44,7 +44,7 @@ module.exports = class ScreenMachine
         @currentScreen = @pickPlan
 
       when 'pay'
-        if !@pay? then @pay = new Pay @$el, @config, @showPickPlan, @getSelectedPlan
+        @pay = new Pay @$el, @config, @showPickPlan, @getSelectedPlan
         @currentScreen = @pay
 
     @currentScreen.show()

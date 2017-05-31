@@ -30,3 +30,12 @@ module.exports = class Pay extends Screen
         cb(data)
       else
         window.location = @config.launchAppPath
+
+  # W always want to build this one fresh, so on hide, we'll destroy
+  hide : () ->
+    super()
+    $(".back-btn", @$node).off()
+    @$node.remove()
+    @payMethods = null
+    @$el        = null
+    @$node      = null
