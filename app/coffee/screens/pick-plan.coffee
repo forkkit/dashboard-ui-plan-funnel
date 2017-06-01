@@ -4,16 +4,21 @@ Form = require 'screens/form'
 
 module.exports = class PickPlan extends Form
 
+  @plans :
+    individual : {name:"Individual", cost:10, is_a_team:false}
+    team       : {name:"Team", cost:15, is_a_team:true}
+
+  @getPlan : (plan)->
+    if @plans[plan]? then return @plans[plan]
+    else console.log("Could not get `#{plan}`, because `#{plan}` is not a plan.");
+
   constructor: (@$el, @config, @refreshPage, @gotoHome, @gotoAddPayment) ->
     @build @config
-    @plans =
-      individual : {name:"Individual", cost:10, is_a_team:false}
-      team       : {name:"Team", cost:15, is_a_team:true}
     super()
 
   build : (@config) ->
     @$node = $ pickPlan( @config )
-    if @config.isTeam
+    if @config.isTeam || (@config.buyNow && @config.buyNowPlan != 'individual')
       $('.col.individual', @$node).addClass 'hidden'
     @$el.append @$node
     castShadows @$node
@@ -43,7 +48,7 @@ module.exports = class PickPlan extends Form
     $('label', $defualtColumn).trigger 'click'
 
 
-  getSelectedPlan : () -> @plans[@selectedPlan]
+  getSelectedPlan : () -> PickPlan.getPlan @selectedPlan
 
   proceed : (cb) ->
     # We may want to actually create the team next step...

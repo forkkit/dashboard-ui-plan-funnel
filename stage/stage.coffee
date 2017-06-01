@@ -6,18 +6,17 @@ paymentMethodConfig =
   # paymentMethod           : paymentMethodShim.getPaymentMethods()
   createPaymentMethod     : (data, nonce, cb)-> console.log 'create payment method'; console.log data; console.log nonce; cb({})
 
-
 config =
   $holder            : $(".holder")
   paymentConfig      : paymentMethodConfig
-  hasAccount         : true
+  hasAccount         : false
   canLaunchApps      : false # canLaunchApps
   isTeam             : false # used to hide the individual plan
-  buyingNow          : true  # potentially used to skip the home (* * *) page
   showSignin         : true
   doRedirect         : true
-  buyNow             : true
-  dashboardPath      : 'http://dashboard.nanobox.io'
+  buyNow             : false
+  buyNowPlan         : 'team'
+  dashboardURL       : 'http://dashboard.nanobox.io'
   downloadPath       : '/path/to/download/desktop'
   launchAppPath      : 'path/to/launching/new/app'
   forgotPasswordPath : 'path/to/forgot/password'

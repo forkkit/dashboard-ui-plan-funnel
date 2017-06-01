@@ -1,3 +1,10 @@
 @import '../lib/assets/core-styles/styles.scss';
-html, body{background: #49BDF5; height: 100vh; }
-.holder{width:715px; min-height:600px; background: white; margin: 0 auto; position: relative; top: 50%; transform: translateY(-50%);}
+$is-stand-alone : true;
+
+@if $is-stand-alone {
+  html, body{background: #49BDF5; height: 100vh; }
+  .holder{width:715px; min-height:600px; background: white; margin: 0 auto; position: relative; top: 50%; transform: translateY(-50%);}
+}@else{
+  html, body{background: none; width:initial !important; }
+  .holder{}
+}

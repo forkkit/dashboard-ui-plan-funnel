@@ -36,6 +36,10 @@ module.exports = class ScreenMachine
         @currentScreen = @createAccount
 
       when 'home'
+        if @config.buyNow
+          @gotToCorrectBuyNowPage()
+          return
+
         if !@home? then @home = new Home @$el, @config, @showPickPlan
         @currentScreen = @home
 
@@ -49,8 +53,19 @@ module.exports = class ScreenMachine
 
     @currentScreen.show()
 
-  getSelectedPlan : () => @pickPlan.getSelectedPlan()
+  getSelectedPlan : () =>
+    if @pickPlan?
+      @pickPlan.getSelectedPlan()
+    else
+      PickPlan.getPlan @config.buyNowPlan
 
+  gotToCorrectBuyNowPage : () ->
+    if @config.buyNowPlan == 'individual'
+      @showPay()
+    else if @config.buyNowPlan == 'team'
+      @showPickPlan()
+    else
+      @showPickPlan()
 
   build : ($parent) ->
     @$el = $ base( {} )

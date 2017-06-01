@@ -6,6 +6,9 @@ class PlanFunnel
     @inspectData()
     @screenMachine = new ScreenMachine @config
 
+    if @config.buyNow
+      $(".plan-funnel", @config.$holder).addClass 'buy-now'
+
     # They have an account, show their home!
     if @config.hasAccount
       @screenMachine.changeScreen 'home'
@@ -15,7 +18,7 @@ class PlanFunnel
         @screenMachine.changeScreen 'sign-in'
       else
         @screenMachine.changeScreen 'create-account'
-        
+
   # Draw any assumptions about the data we need
   inspectData : () ->
     # @config.hasPaymentMethod = @config.paymentConfig.paymentMethod.length >= 1

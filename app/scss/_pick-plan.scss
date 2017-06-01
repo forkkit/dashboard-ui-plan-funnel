@@ -8,7 +8,7 @@
           .radio-btn {margin-right:8px; }
           .label     {font-style: normal; font-weight: bold; color:#67889d; font-size: 16px; }
         }
-        &.total      {font-weight: $bold; font-size:20px; margin-bottom:10px; 
+        &.total      {font-weight: $bold; font-size:20px; margin-bottom:10px;
           &.per-user {display: flex; flex-direction: column;
             &:after  {content:"per user"; font-size:13px; text-transform: none; letter-spacing: 0; line-height: 0; }
           }
@@ -44,4 +44,9 @@
     .team-name       {opacity: 1;}
   }
   form{flex-direction: initial; align-items: flex-end; width:initial; flex-grow:1;}
+}
+
+&.buy-now .pick-plan  {
+  .back-btn           {display: none;}
+  .submit-section     {margin-top:80px; }
 }
