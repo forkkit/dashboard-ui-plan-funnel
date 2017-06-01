@@ -7,15 +7,14 @@
 √ Back buttons
 √ Added EULA checkbox
 √ Added forgot password link
+√ On individual team, clicking next tries to create a team
+√ Get Help : https://nanobox.io/contact-us/
+√ change the payment method component to default to create (instead of update)
+√ Design login / register surrounding page
 - Build front site
 - Integrate into the front site
-- Design login / register surrounding page
-- On forms, let 'enter' keypress submit
+v On forms, let 'enter' keypress submit
   √ Login
   √ Create account
   √ Create Team
   - Payment methods?
------------------------------------- Issues
-√ On individual team, clicking next tries to create a team
-√ Get Help : https://nanobox.io/contact-us/
-√ change the payment method component to default to create (instead of update)

@@ -29,9 +29,14 @@ module.exports = class Pay extends Screen
       if data.error?
         cb(data)
       else
-        window.location = @config.launchAppPath
+        if @config.buyNow
+          parent.postMessage {message:'redirect', newUrl:@config.dashboardPath}, '*'
+        else
+          window.location = @config.launchAppPath
 
-  # W always want to build this one fresh, so on hide, we'll destroy
+
+
+  # W3 always want to build this one fresh, so on hide, we'll also destroy! X-]
   hide : () ->
     super()
     $(".back-btn", @$node).off()

@@ -16,6 +16,8 @@ config =
   buyingNow          : true  # potentially used to skip the home (* * *) page
   showSignin         : true
   doRedirect         : true
+  buyNow             : true
+  dashboardPath      : 'http://dashboard.nanobox.io'
   downloadPath       : '/path/to/download/desktop'
   launchAppPath      : 'path/to/launching/new/app'
   forgotPasswordPath : 'path/to/forgot/password'
