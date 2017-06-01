@@ -16,7 +16,7 @@ config =
   doRedirect         : true
   buyNow             : false
   buyNowPlan         : 'team'
-  dashboardURL       : 'http://dashboard.nanobox.io'
+  dashboardUrl       : 'http://dashboard.nanobox.io'
   downloadPath       : '/path/to/download/desktop'
   launchAppPath      : 'path/to/launching/new/app'
   forgotPasswordPath : 'path/to/forgot/password'

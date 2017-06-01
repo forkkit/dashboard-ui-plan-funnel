@@ -30,7 +30,7 @@ module.exports = class Pay extends Screen
         cb(data)
       else
         if @config.buyNow
-          parent.postMessage {message:'redirect', newUrl:@config.dashboardPath}, '*'
+          parent.postMessage {message:'redirect', newUrl:@config.dashboardUrl}, '*'
         else
           window.location = @config.launchAppPath
 
