@@ -18,8 +18,12 @@ module.exports = class PickPlan extends Form
 
   build : (@config) ->
     @$node = $ pickPlan( @config )
-    if @config.isTeam || (@config.buyNow && @config.buyNowPlan != 'individual')
+    if @config.showLegacy
+      $('.col.team', @$node).addClass('hidden').removeClass 'default'
+      $('.col.individual', @$node).addClass 'default'
+    else if @config.isTeam || (@config.buyNow && @config.buyNowPlan != 'individual')
       $('.col.individual', @$node).addClass 'hidden'
+
     @$el.append @$node
     castShadows @$node
     lexify @$node
@@ -45,7 +49,7 @@ module.exports = class PickPlan extends Form
     # TODO: We probably want to allow the currently active plan to be passed in
     $defualtColumn = $ ".col.default", @$node
     $defualtColumn.trigger 'click'
-    $('label', $defualtColumn).trigger 'click'
+    $('input', $defualtColumn).trigger 'click'
 
 
   getSelectedPlan : () -> PickPlan.getPlan @selectedPlan

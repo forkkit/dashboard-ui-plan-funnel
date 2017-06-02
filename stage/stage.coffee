@@ -9,7 +9,7 @@ paymentMethodConfig =
 config =
   $holder            : $(".holder")
   paymentConfig      : paymentMethodConfig
-  showLegacy         : true  # !new
+  showLegacy         : false  # !new
   hasAccount         : false
   canLaunchApps      : false # canLaunchApps
   isTeam             : false # used to hide the individual plan
@@ -22,9 +22,9 @@ config =
   launchAppPath      : 'path/to/launching/new/app'
   forgotPasswordPath : 'path/to/forgot/password'
   getPaymentConfig   : (cb)       -> cb paymentMethodConfig
-  signIn             : (data, cb) -> console.log(data); cb({redirect:'/index.html'})
-  createAccount      : (data, cb) -> console.log(data); cb({redirect:'/index.html'})
-  createTeam         : (name, cb) -> console.log(name); cb({})
+  signIn             : (data, cb) -> console.log "signIn";        console.log(data); cb({redirect:'/index.html'})
+  createAccount      : (data, cb) -> console.log "createAccount"; console.log(data); cb({redirect:'/index.html'})
+  createTeam         : (name, cb) -> console.log "createTeam";    console.log(name); cb({})
 
   #setPlan          : (plan, cb) -> console.log(plan); cb({}) # Not used anymore, delete
 
