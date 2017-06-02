@@ -31,6 +31,8 @@ module.exports = class Pay extends Screen
       else
         if @config.buyNow
           parent.postMessage {message:'redirect', newUrl:@config.dashboardUrl}, '*'
+        else if @config.showLegacy
+          window.location = @config.dashboardUrl
         else
           window.location = @config.launchAppPath
 
