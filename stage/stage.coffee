@@ -9,11 +9,12 @@ paymentMethodConfig =
 config =
   $holder            : $(".holder")
   paymentConfig      : paymentMethodConfig
+  showLegacy         : true  # !new
   hasAccount         : false
   canLaunchApps      : false # canLaunchApps
   isTeam             : false # used to hide the individual plan
-  showSignin         : true
-  doRedirect         : true
+  showSignin         : false
+  doRedirect         : false
   buyNow             : false
   buyNowPlan         : 'team'
   dashboardUrl       : 'http://dashboard.nanobox.io'

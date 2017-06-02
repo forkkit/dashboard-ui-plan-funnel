@@ -45,6 +45,7 @@
 	.st39{fill:#1A1F29;}
 	.st40{fill:url(#SVGID_5_);}
 	.st41{fill-rule:evenodd;clip-rule:evenodd;fill:#19AAF4;}
+	.st42{fill:none;stroke:#11A7ED;stroke-width:2.1377;stroke-miterlimit:10;}
 </style>
 <pattern  y="200" width="37.208" height="37.208" patternUnits="userSpaceOnUse" id="New_Pattern_Swatch_4" viewBox="21.73 -58.938 37.208 37.208" style="overflow:visible;">
 	<g>
@@ -218,5 +219,17 @@
 <g id="blu-down-arrow_x60_18x18">
 	<rect x="4.094" class="st41" width="9.403" height="9.403"/>
 	<polygon class="st41" points="8.795,17.821 0,9.026 17.591,9.026 	"/>
+</g>
+<g id="legacy-heart_x60_86x82">
+	<polygon class="st42" points="42.918,49.033 55.209,40.115 64.917,46.994 64.917,63.734 42.918,80.346 20.918,63.734 
+		20.918,46.994 30.372,39.93 	"/>
+	<polyline class="st42" points="42.791,80.346 42.791,63.402 21.911,48.136 	"/>
+	<polyline class="st42" points="53.183,72.818 53.183,55.874 30.279,39.775 	"/>
+	<line class="st42" x1="42.791" y1="63.402" x2="64.917" y2="46.994"/>
+	<line class="st42" x1="41.731" y1="0" x2="41.731" y2="18"/>
+	<line class="st42" x1="64.347" y1="3.343" x2="58.627" y2="20.41"/>
+	<line class="st42" x1="84.728" y1="13.699" x2="73.882" y2="28.064"/>
+	<line class="st42" x1="21.234" y1="3.343" x2="26.954" y2="20.41"/>
+	<line class="st42" x1="0.853" y1="13.699" x2="11.699" y2="28.064"/>
 </g>
 </svg>

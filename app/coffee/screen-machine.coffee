@@ -3,6 +3,7 @@ base = require 'jade/base'
 CreateAccount = require 'screens/create-account'
 SignIn        = require 'screens/sign-in'
 Home          = require 'screens/home'
+Legacy        = require 'screens/legacy'
 PickPlan      = require 'screens/pick-plan'
 Pay           = require 'screens/pay'
 
@@ -16,6 +17,7 @@ module.exports = class ScreenMachine
   showHome          : ()=> @changeScreen 'home'
   showPickPlan      : ()=> @changeScreen 'pick-plan'
   showPay           : ()=> @changeScreen 'pay'
+  showLegacy        : ()=> @changeScreen 'legacy'
 
   refreshPage  : ()-> window.location.reload false
 
@@ -39,6 +41,9 @@ module.exports = class ScreenMachine
         if @config.buyNow
           @gotToCorrectBuyNowPage()
           return
+        else if @config.showLegacy
+          @showLegacy()
+          return
 
         if !@home? then @home = new Home @$el, @config, @showPickPlan
         @currentScreen = @home
@@ -50,6 +55,10 @@ module.exports = class ScreenMachine
       when 'pay'
         @pay = new Pay @$el, @config, @showPickPlan, @getSelectedPlan
         @currentScreen = @pay
+
+      when 'legacy'
+        @legacy = new Legacy @$el, @showPickPlan
+        @currentScreen = @legacy
 
     @currentScreen.show()
 
