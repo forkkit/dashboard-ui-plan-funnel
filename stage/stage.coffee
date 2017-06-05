@@ -9,8 +9,8 @@ paymentMethodConfig =
 config =
   $holder            : $(".holder")
   paymentConfig      : paymentMethodConfig
-  showLegacy         : false  # !new
-  hasAccount         : false
+  showLegacy         : false
+  hasAccount         : true
   canLaunchApps      : false # canLaunchApps
   isTeam             : false # used to hide the individual plan
   showSignin         : false

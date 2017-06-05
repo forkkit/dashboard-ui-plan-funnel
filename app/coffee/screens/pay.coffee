@@ -1,10 +1,11 @@
-Screen = require 'screens/screen'
+Form = require 'screens/form'
 pay = require 'jade/pay'
 
-module.exports = class Pay extends Screen
+module.exports = class Pay extends Form
 
   constructor: (@$el, @config, @gotoPickPlan, @getSelectedPlan) ->
     @build()
+    super()
 
   build : () ->
     @$node = $ pay( {plan:@getSelectedPlan()} )
@@ -25,10 +26,11 @@ module.exports = class Pay extends Screen
       @payMethods.createPayMethod {}, $(".payment-wrapper", @$node), true
 
   onPaymentReady : (data, nonce, cb) =>
-    @realPaymentCreateCb data, nonce, ()=>
-      if data.error?
-        cb(data)
-      else
+    @clearErrors()
+    if data.error?
+      @showErrors result.error
+    else
+      @realPaymentCreateCb data, nonce, ()=>
         if @config.buyNow
           parent.postMessage {message:'redirect', newUrl:@config.dashboardUrl}, '*'
         else if @config.showLegacy
