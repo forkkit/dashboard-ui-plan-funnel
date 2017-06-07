@@ -73,6 +73,8 @@ module.exports = class ScreenMachine
       @showPay()
     else if @config.buyNowPlan == 'team'
       @showPickPlan()
+    else if @config.buyNowPlan == 'local'
+      window.location = @config.dashboardUrl
     else
       @showPickPlan()
 

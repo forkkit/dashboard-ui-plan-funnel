@@ -10,13 +10,13 @@ config =
   $holder            : $(".holder")
   paymentConfig      : paymentMethodConfig
   showLegacy         : false
-  hasAccount         : true
+  hasAccount         : false
   canLaunchApps      : false # canLaunchApps
   isTeam             : false # used to hide the individual plan
   showSignin         : false
   doRedirect         : false
-  buyNow             : false
-  buyNowPlan         : 'team'
+  buyNow             : true
+  buyNowPlan         : 'local'
   dashboardUrl       : 'http://dashboard.nanobox.io'
   downloadPath       : '/path/to/download/desktop'
   launchAppPath      : 'path/to/launching/new/app'
