@@ -46,6 +46,12 @@
 	.st40{fill:url(#SVGID_5_);}
 	.st41{fill-rule:evenodd;clip-rule:evenodd;fill:#19AAF4;}
 	.st42{fill:none;stroke:#11A7ED;stroke-width:2.1377;stroke-miterlimit:10;}
+	.st43{fill:#19AAF4;}
+	.st44{fill:#1279AD;}
+	.st45{fill:#F0E7E6;}
+	.st46{fill:#DFD6D6;}
+	.st47{fill:#E6DDDD;}
+	.st48{fill:none;stroke:#EDE3E3;stroke-width:1.0658;stroke-miterlimit:10;stroke-dasharray:9.4284,2.6938;}
 </style>
 <pattern  y="200" width="37.208" height="37.208" patternUnits="userSpaceOnUse" id="New_Pattern_Swatch_4" viewBox="21.73 -58.938 37.208 37.208" style="overflow:visible;">
 	<g>
@@ -231,5 +237,26 @@
 	<line class="st42" x1="84.728" y1="13.699" x2="73.882" y2="28.064"/>
 	<line class="st42" x1="21.234" y1="3.343" x2="26.954" y2="20.41"/>
 	<line class="st42" x1="0.853" y1="13.699" x2="11.699" y2="28.064"/>
+</g>
+<g id="blue-login-logo_x60_52x60">
+	<polygon class="st43" points="51.835,44.89 25.917,59.854 0,44.89 0,14.963 25.917,0 51.835,14.963 	"/>
+	<polyline class="st44" points="14.716,42.75 29.804,57.594 51.835,44.89 51.835,31.861 36.649,16.675 25.917,16.675 25.917,35.407 
+			"/>
+	<polygon class="st3" points="36.649,41.244 25.823,46.797 14.716,41.15 25.541,35.502 	"/>
+	<polygon class="st45" points="32.036,38.89 25.635,42.185 19.14,38.796 25.541,35.502 	"/>
+	<polygon class="st46" points="25.823,46.797 36.649,41.244 36.649,42.844 25.823,48.398 	"/>
+	<polygon class="st47" points="25.823,46.797 14.716,41.15 14.716,42.75 25.823,48.398 	"/>
+	<polygon class="st46" points="25.917,37.761 34.766,33.242 34.766,34.56 25.917,39.079 	"/>
+	<polygon class="st47" points="25.917,37.761 17.069,33.242 17.069,34.56 25.917,39.079 	"/>
+	<polygon class="st3" points="34.766,33.242 25.917,37.761 17.069,33.242 25.917,28.724 	"/>
+	<polygon class="st45" points="32.413,32.019 25.917,35.407 19.422,32.019 25.917,28.724 	"/>
+	<polygon class="st46" points="25.917,30.701 36.649,25.147 36.649,26.841 25.917,32.301 	"/>
+	<polygon class="st47" points="25.917,30.701 15.186,25.147 15.186,26.841 25.917,32.301 	"/>
+	<polygon class="st3" points="36.649,25.147 25.917,30.701 15.186,25.147 25.917,19.687 	"/>
+	<polygon class="st45" points="33.825,23.735 25.917,27.783 18.01,23.735 25.917,19.687 	"/>
+	<polygon class="st3" points="36.649,16.675 25.823,22.229 14.998,16.675 25.823,11.121 	"/>
+	<polygon class="st46" points="25.823,22.229 36.649,16.675 36.649,18.369 25.823,23.923 	"/>
+	<polygon class="st47" points="25.823,22.229 14.998,16.675 14.998,18.369 25.823,23.923 	"/>
+	<path class="st48" d="M36.649,23.735"/>
 </g>
 </svg>

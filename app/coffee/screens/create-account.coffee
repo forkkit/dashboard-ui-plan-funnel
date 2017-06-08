@@ -11,6 +11,7 @@ module.exports = class CreateAccount extends Form
     @$node = $ createAccount( {} )
     @$el.append @$node
     lexify @$node
+    castShadows(@$node)
     @$createBtn = $("#create-account", @$node)
     $("#switch", @$node).on 'click', @switchToSignin
     $("form", @$node).on 'submit', (e)=> e.preventDefault(); @submitForm()

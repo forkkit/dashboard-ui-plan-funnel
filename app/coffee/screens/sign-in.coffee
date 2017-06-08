@@ -11,6 +11,7 @@ module.exports = class Signin extends Form
     @$node = $ signIn( @config )
     $el.append @$node
     lexify @$node
+    castShadows @$node
 
     @$login = $("#login", @$node)
     $("#switch", @$node).on 'click', @createAccountCb

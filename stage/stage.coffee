@@ -15,8 +15,8 @@ config =
   isTeam             : false # used to hide the individual plan
   showSignin         : false
   doRedirect         : false
-  buyNow             : true
-  buyNowPlan         : 'local'
+  buyNow             : false
+  buyNowPlan         : 'team'
   dashboardUrl       : 'http://dashboard.nanobox.io'
   downloadPath       : '/path/to/download/desktop'
   launchAppPath      : 'path/to/launching/new/app'

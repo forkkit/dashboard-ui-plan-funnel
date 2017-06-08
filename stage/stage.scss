@@ -1,7 +1,7 @@
 @import '../lib/assets/core-styles/styles.scss';
-$is-stand-alone : true;
+$doProvideFakeWrapper : true;
 
-@if $is-stand-alone {
+@if $doProvideFakeWrapper {
   html, body{background: #49BDF5; height: 100vh; }
   .holder{width:715px; min-height:600px; background: white; margin: 0 auto; position: relative; top: 50%; transform: translateY(-50%);}
 }@else{

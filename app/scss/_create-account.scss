@@ -1,7 +1,8 @@
 .create-account,
-.sign-in                  {max-width:580px; margin:0 auto;position: relative;
+.sign-in                  {max-width:580px; margin:0 auto;position: relative;padding-top:30px;
   #errors                 {position: absolute; top:120px; }
-  .title                  {margin-bottom:80px; }
+  #blue-login-logo        {margin: 0 auto; display: block; }
+  .title                  {padding-top:15px; }
   .row                    {display: flex; margin-bottom: 30px;
     > *                   {flex-grow: 1;}
     &.twin                {
