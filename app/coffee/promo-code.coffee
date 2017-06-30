@@ -6,7 +6,7 @@ module.exports = class PromoCode
     preText = if context == "create-account" then "Creating an account" else "Logging in"
     @$promo = $ promo( {preText:preText} )
     @$el.prepend @$promo
-    @$el.addClass 'promo-active'
+    $("#sessions").addClass 'promo-active'
     castShadows @$promo
 
   destroy : ()->
