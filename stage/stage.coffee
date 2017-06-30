@@ -7,7 +7,7 @@ paymentMethodConfig =
 
 config =
   $holder            : $(".holder")
-  # promoCode          : "codecamp"
+  promoCode          : "codecamp"
   paymentConfig      : paymentMethodConfig
   showLegacy         : false
   hasAccount         : false
