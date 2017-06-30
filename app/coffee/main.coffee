@@ -1,10 +1,11 @@
 CreateAccount = require 'screens/create-account'
 ScreenMachine = require 'screen-machine'
+PromoCode     = require 'promo-code'
 class PlanFunnel
 
   constructor: (@config) ->
     @inspectData()
-    @screenMachine = new ScreenMachine @config
+    @screenMachine = new ScreenMachine @config, @addPromoCode
 
     if @config.buyNow
       $(".plan-funnel", @config.$holder).addClass 'buy-now'
@@ -22,6 +23,11 @@ class PlanFunnel
   # Draw any assumptions about the data we need
   inspectData : () ->
     # @config.hasPaymentMethod = @config.paymentConfig.paymentMethod.length >= 1
+
+  addPromoCode : (context) =>
+    if @promo? then @promo.destroy()
+    if  @config.promoCode?
+      @promo = new PromoCode(@screenMachine.$el, context)
 
 window.nanobox ||= {}
 nanobox.PlanFunnel = PlanFunnel

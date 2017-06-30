@@ -1,0 +1,9 @@
+&.promo-active  {position: relative; margin-top:80px;
+  .promo        {position: absolute; display: flex; align-items: center; padding:14px; top:-80px; background:#147BAC; @include caps(white, 12px); left:50%; transform: translateX(-50%); white-space: nowrap;
+    .txt        {margin:0 10px; color:#47c1ff; }
+    .promo-code {font-size:19px; }
+    &:after     {content:""; position: absolute; width: 0; height: 0; border-style: solid; border-width: 0 20px 20px 0; border-color: transparent #147BAC transparent transparent;
+      bottom:-20px; right:50px;
+    }
+  }
+}

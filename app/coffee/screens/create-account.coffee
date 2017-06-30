@@ -1,5 +1,6 @@
 createAccount = require 'jade/create-account'
-Form = require 'screens/form'
+promo         = require 'jade/promo'
+Form          = require 'screens/form'
 
 module.exports = class CreateAccount extends Form
 

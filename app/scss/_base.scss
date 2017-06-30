@@ -9,7 +9,7 @@
 .lexi.lexi-on-white     {margin-top:30px;
   $bg-color: #ebeff2;
   label                 {display: flex; flex-direction: column; @include caps(#93abb9, 12px); font-style:normal; line-height: 30px; }
-  input.lexi-input      {background:$bg-color; height:50px; border:none; padding-left:15px;
+  input.lexi-input      {background:$bg-color; height:50px; border:none; padding-left:15px; -webkit-box-shadow: 0 0 0 30px #ebeff2 inset;
     &:focus             {background:#f9e7d0}
   }
   .lexi-ui              {

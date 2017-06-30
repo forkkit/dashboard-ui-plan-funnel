@@ -9,7 +9,7 @@ Pay           = require 'screens/pay'
 
 module.exports = class ScreenMachine
 
-  constructor: (@config) ->
+  constructor: (@config, @addPromoCodeCb) ->
     @build(@config.$holder)
 
   showCreateAccount : ()=> @changeScreen 'create-account'
@@ -31,10 +31,12 @@ module.exports = class ScreenMachine
     switch screen
       when 'sign-in'
         if !@signIn? then @signIn = new SignIn @$el, @config, @showHome, @showCreateAccount
+        @addPromoCodeCb(screen)
         @currentScreen = @signIn
 
       when 'create-account'
         if !@createAccount? then @createAccount = new CreateAccount @$el, @config, @showHome, @showSignin
+        @addPromoCodeCb(screen)
         @currentScreen = @createAccount
 
       when 'home'
