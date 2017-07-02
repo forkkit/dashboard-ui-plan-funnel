@@ -26,6 +26,9 @@
       &:before{height:15px; border-left:solid 1px #AFB9BD; margin:0 10px; display: block; content:""; display: inline-block;}
     }
   }
+  .lexi.lexi-on-white     {
+    input.lexi-input      {-webkit-box-shadow: 0 0 0 30px #ebeff2 inset;}
+  }
 }
 .create-account{
   .switch{margin:20px 0 30px; }
