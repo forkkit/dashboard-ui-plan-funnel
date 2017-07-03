@@ -38,9 +38,7 @@ module.exports = class Pay extends Form
         else
           window.location = @config.launchAppPath
 
-
-
-  # W3 always want to build this one fresh, so on hide, we'll also destroy! X-]
+  # We always want to build this one fresh, so on hide, we'll also destroy! X-]
   hide : () ->
     super()
     $(".back-btn", @$node).off()
